@@ -20,6 +20,7 @@ Manifests
 ---------
 - `default.xml`: Uses GitHub remote `https://github.com/Starry-Mix-THU` and pins non-main branches where needed.
 - `local.xml`: Uses `file://` remote pointing to an existing workspace path; includes `box/` and other local-only projects.
+- `locked.xml`: Pins every project to the exact local HEAD commit.
 
 Groups
 ------
