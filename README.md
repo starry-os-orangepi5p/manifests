@@ -13,7 +13,7 @@ Usage
   - `repo sync -j8`
 
 - Clone from an existing local workspace (offline/dev):
-  - `repo init -u file://$(pwd) -b main -m local.xml`
+  - `repo init -u file:///absolute/path/to/this/manifests -b main -m local.xml`
   - `repo sync -j8`
 
 Manifests
@@ -32,4 +32,3 @@ Common Commands
 - Sync all: `repo sync -j8`
 - Partial sync by group: `repo sync -g core,plats`
 - List projects: `repo list`
-
