@@ -33,3 +33,8 @@ Common Commands
 - Sync all: `repo sync -j8`
 - Partial sync by group: `repo sync -g core,plats`
 - List projects: `repo list`
+
+Regenerate locked.xml
+---------------------
+- From `manifests/`: `python3 scripts/gen_locked.py -i default.xml -o locked.xml`
+- Include local-only repos (e.g., `box/`): `python3 scripts/gen_locked.py -i local.xml -o locked.xml`
