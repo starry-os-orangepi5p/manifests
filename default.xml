@@ -36,5 +36,5 @@
   <project name="rustfmt"                    path="rustfmt"                        groups="tools"/>
   <project name="arceos-backup"              path="arceos-backup"                  groups="backup"/>
   <project name="box"                        path="box"/>
-  <project name="axvisor"                    path="extra/axvisor"           groups="extra"/>
+  <project name="axvisor"                    path="axvisor"           groups="extra"/>
 </manifest>

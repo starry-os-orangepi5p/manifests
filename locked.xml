@@ -33,5 +33,5 @@
   <project name="rustfmt" path="rustfmt" groups="tools" revision="885608334dab7923f378f5cda6aa438db294948a" />
   <project name="arceos-backup" path="arceos-backup" groups="backup" revision="8a575006dc545cbf8b599944f1c538a32c8f7420" />
   <project name="box" path="box" revision="3abf81d2a959c190711460e747c385a95faf1848" />
-  <project name="axvisor" path="extra/axvisor" groups="extra" revision="01634a047e991ea8d32d99e8f6a792c52424bc5e" />
+  <project name="axvisor" path="axvisor" groups="extra" revision="01634a047e991ea8d32d99e8f6a792c52424bc5e" />
 </manifest>
