@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- Local-only manifest for cloning from existing workspace via file:// -->
+  <remote name="local" fetch="file:///home/seven_wsl/Workspace/CSstudy/os_porting_c/comp/rk3588_c/starry_setup/setup/Starry-Mix-THU"/>
+  <default remote="local" revision="HEAD" sync-j="8"/>
+
+  <!-- Include everything found locally, including projects without a GitHub origin like box/ -->
+  <project name="starry-mix"                path="starry-mix"/>
+  <project name="arceos"                     path="arceos"/>
+  <project name="starry-process"             path="starry-process"/>
+  <project name="starry-signal"              path="starry-signal"/>
+  <project name="starry-vm"                  path="starry-vm"/>
+  <project name="axplat_crates"              path="axplat_crates"/>
+  <project name="axplat-loongarch64-2k1000la" path="axplat-loongarch64-2k1000la"/>
+  <project name="axplat-riscv64-visionfive2" path="axplat-riscv64-visionfive2"/>
+  <project name="axbacktrace"                path="axbacktrace"/>
+  <project name="axcpu"                      path="axcpu"/>
+  <project name="axdriver_crates"            path="axdriver_crates"/>
+  <project name="axerrno"                    path="axerrno"/>
+  <project name="axio"                       path="axio"/>
+  <project name="axsched"                    path="axsched"/>
+  <project name="page_table_multiarch"       path="page_table_multiarch"/>
+  <project name="plic"                       path="plic"/>
+  <project name="ahci_driver"                path="ahci_driver"/>
+  <project name="simple-sdmmc"               path="simple-sdmmc"/>
+  <project name="smoltcp"                    path="smoltcp"/>
+  <project name="axfs-ng-vfs"                path="axfs-ng-vfs"/>
+  <project name="lwext4_rust"                path="lwext4_rust"/>
+  <project name="lwext4"                     path="lwext4"/>
+  <project name="rust-fatfs"                 path="rust-fatfs"/>
+  <project name="priority-queue"             path="priority-queue"/>
+  <project name="vec-map"                    path="vec-map"/>
+  <project name="kernel_elf_parser"          path="kernel_elf_parser"/>
+  <project name="flatten_objects"            path="flatten_objects"/>
+  <project name="rustfmt"                    path="rustfmt"/>
+  <project name="arceos-backup"              path="arceos-backup"/>
+  <project name="box"                        path="box"/>
+</manifest>

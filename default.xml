@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- Remote hosting for public clones -->
+  <remote name="github" fetch="https://github.com/Starry-Mix-THU"/>
+  <default remote="github" revision="main" sync-j="8"/>
+
+  <!-- Core workspace -->
+  <project name="starry-mix"                path="starry-mix"                groups="core"/>
+  <project name="arceos"                     path="arceos"                    groups="core"/>
+  <project name="starry-process"             path="starry-process"            groups="core"/>
+  <project name="starry-signal"              path="starry-signal"             groups="core"/>
+  <project name="starry-vm"                  path="starry-vm"                  groups="core"/>
+
+  <!-- Platform crates -->
+  <project name="axplat_crates"              path="axplat_crates"             groups="plats"/>
+  <project name="axplat-loongarch64-2k1000la" path="axplat-loongarch64-2k1000la" groups="plats"/>
+  <project name="axplat-riscv64-visionfive2" path="axplat-riscv64-visionfive2" groups="plats"/>
+
+  <!-- Libraries and drivers -->
+  <project name="axbacktrace"                path="axbacktrace"               groups="crates"/>
+  <project name="axcpu"                      path="axcpu"                     groups="crates"/>
+  <project name="axdriver_crates"            path="axdriver_crates"           groups="crates"/>
+  <project name="axerrno"                    path="axerrno"                   groups="crates"/>
+  <project name="axio"                       path="axio"                      groups="crates"/>
+  <project name="axsched"                    path="axsched"                   groups="crates"/>
+  <project name="page_table_multiarch"       path="page_table_multiarch"      groups="crates"/>
+  <project name="plic"                       path="plic"                      groups="drivers"/>
+  <project name="ahci_driver"                path="ahci_driver"               groups="drivers"/>
+  <project name="simple-sdmmc"               path="simple-sdmmc"              groups="drivers"/>
+  <project name="smoltcp"                    path="smoltcp"                   groups="net"/>
+  <project name="axfs-ng-vfs"                path="axfs-ng-vfs"               groups="fs"/>
+  <project name="lwext4_rust"                path="lwext4_rust"               groups="fs"/>
+  <project name="lwext4"                     path="lwext4"                    groups="fs" revision="master"/>
+  <project name="rust-fatfs"                 path="rust-fatfs"                groups="fs" revision="master"/>
+  <project name="priority-queue"             path="priority-queue"            groups="crates" revision="master"/>
+  <project name="vec-map"                    path="vec-map"                   groups="crates" revision="master"/>
+
+  <!-- Tools and misc -->
+  <project name="kernel_elf_parser"          path="kernel_elf_parser"         groups="tools"/>
+  <project name="flatten_objects"            path="flatten_objects"           groups="tools"/>
+  <project name="rustfmt"                    path="rustfmt"                   groups="tools" revision="master"/>
+
+  <!-- Optional backup fork -->
+  <project name="arceos-backup"              path="arceos-backup"             groups="backup"/>
+</manifest>
+
