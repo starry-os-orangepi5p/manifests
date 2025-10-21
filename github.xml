@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- GitHub remote for starry-os-orangepi5p organization -->
+  <remote name="github" fetch="https://github.com/starry-os-orangepi5p"/>
+  <default remote="github" revision="main" sync-j="8"/>
+
+  <!-- Core projects -->
+  <project name="starry-mix" path="starry-mix" groups="core"/>
+  <project name="arceos" path="arceos" groups="core"/>
+
+  <!-- Starry components -->
+  <project name="starry-process" path="starry-process" groups="starry"/>
+  <project name="starry-signal" path="starry-signal" groups="starry"/>
+  <project name="starry-vm" path="starry-vm" groups="starry"/>
+
+  <!-- Platform crates -->
+  <project name="axplat_crates" path="axplat_crates" groups="platform"/>
+  <project name="axplat-loongarch64-2k1000la" path="axplat-loongarch64-2k1000la" groups="platform"/>
+  <project name="axplat-riscv64-visionfive2" path="axplat-riscv64-visionfive2" groups="platform"/>
+
+  <!-- ArceOS crates -->
+  <project name="axbacktrace" path="axbacktrace" groups="axcrate"/>
+  <project name="axcpu" path="axcpu" groups="axcrate"/>
+  <project name="axdriver_crates" path="axdriver_crates" groups="axcrate"/>
+  <project name="axerrno" path="axerrno" groups="axcrate"/>
+  <project name="axio" path="axio" groups="axcrate"/>
+  <project name="axsched" path="axsched" groups="axcrate"/>
+
+  <!-- Memory management -->
+  <project name="page_table_multiarch" path="page_table_multiarch" groups="memory"/>
+
+  <!-- Drivers -->
+  <project name="plic" path="plic" groups="driver"/>
+  <project name="ahci_driver" path="ahci_driver" groups="driver"/>
+  <project name="simple-sdmmc" path="simple-sdmmc" groups="driver"/>
+
+  <!-- Network -->
+  <project name="smoltcp" path="smoltcp" groups="network"/>
+
+  <!-- Filesystems -->
+  <project name="axfs-ng-vfs" path="axfs-ng-vfs" groups="fs"/>
+  <project name="lwext4_rust" path="lwext4_rust" groups="fs"/>
+  <project name="lwext4" path="lwext4" groups="fs"/>
+  <project name="rust-fatfs" path="rust-fatfs" groups="fs"/>
+
+  <!-- Dependencies -->
+  <project name="priority-queue" path="priority-queue" groups="deps"/>
+  <project name="vec-map" path="vec-map" groups="deps"/>
+  <project name="allocator" path="allocator" groups="deps"/>
+
+  <!-- Tools -->
+  <project name="kernel_elf_parser" path="kernel_elf_parser" groups="tools"/>
+  <project name="flatten_objects" path="flatten_objects" groups="tools"/>
+  <project name="rustfmt" path="rustfmt" groups="tools"/>
+
+  <!-- Extra/Optional -->
+  <project name="axvisor" path="axvisor" groups="extra"/>
+</manifest>
