@@ -4,55 +4,89 @@
   <remote name="github" fetch="https://github.com/starry-os-orangepi5p"/>
   <default remote="github" revision="main" sync-j="8"/>
 
-  <!-- Core projects -->
-  <project name="starry-mix" path="starry-mix" groups="core"/>
-  <project name="arceos" path="arceos" groups="core"/>
+  <!-- ========================================== -->
+  <!-- Layer 1: Core Operating System            -->
+  <!-- ========================================== -->
 
-  <!-- Starry components -->
-  <project name="starry-process" path="starry-process" groups="starry"/>
-  <project name="starry-signal" path="starry-signal" groups="starry"/>
-  <project name="starry-vm" path="starry-vm" groups="starry"/>
+  <!-- Main OS - Starry OS based on ArceOS -->
+  <project name="starry-mix"         path="starry-mix"              groups="core,layer1"/>
 
-  <!-- Platform crates -->
-  <project name="axplat_crates" path="axplat_crates" groups="platform"/>
-  <project name="axplat-loongarch64-2k1000la" path="axplat-loongarch64-2k1000la" groups="platform"/>
-  <project name="axplat-riscv64-visionfive2" path="axplat-riscv64-visionfive2" groups="platform"/>
+  <!-- ArceOS - Unikernel base -->
+  <project name="arceos"             path="arceos"                  groups="core,layer1"/>
 
-  <!-- ArceOS crates -->
-  <project name="axbacktrace" path="axbacktrace" groups="axcrate"/>
-  <project name="axcpu" path="axcpu" groups="axcrate"/>
-  <project name="axdriver_crates" path="axdriver_crates" groups="axcrate"/>
-  <project name="axerrno" path="axerrno" groups="axcrate"/>
-  <project name="axio" path="axio" groups="axcrate"/>
-  <project name="axsched" path="axsched" groups="axcrate"/>
+  <!-- ========================================== -->
+  <!-- Layer 2: OS Core Components                -->
+  <!-- ========================================== -->
+
+  <!-- Starry OS subsystems -->
+  <project name="starry-process"     path="modules/starry-process"  groups="starry,layer2"/>
+  <project name="starry-signal"      path="modules/starry-signal"   groups="starry,layer2"/>
+  <project name="starry-vm"          path="modules/starry-vm"        groups="starry,layer2"/>
+
+  <!-- ========================================== -->
+  <!-- Layer 3: Platform Support                  -->
+  <!-- ========================================== -->
+
+  <!-- Platform abstraction layer -->
+  <project name="axplat_crates"                  path="platforms/axplat_crates"             groups="platform,layer3"/>
+  <project name="axplat-loongarch64-2k1000la"    path="platforms/loongarch64-2k1000la"      groups="platform,layer3"/>
+  <project name="axplat-riscv64-visionfive2"     path="platforms/riscv64-visionfive2"       groups="platform,layer3"/>
+
+  <!-- ========================================== -->
+  <!-- Layer 4: Kernel Subsystems                 -->
+  <!-- ========================================== -->
+
+  <!-- ArceOS core crates -->
+  <project name="axbacktrace"        path="crates/axbacktrace"      groups="axcrate,layer4"/>
+  <project name="axcpu"              path="crates/axcpu"            groups="axcrate,layer4"/>
+  <project name="axdriver_crates"    path="crates/axdriver_crates"  groups="axcrate,layer4"/>
+  <project name="axerrno"            path="crates/axerrno"          groups="axcrate,layer4"/>
+  <project name="axio"               path="crates/axio"             groups="axcrate,layer4"/>
+  <project name="axsched"            path="crates/axsched"          groups="axcrate,layer4"/>
 
   <!-- Memory management -->
-  <project name="page_table_multiarch" path="page_table_multiarch" groups="memory"/>
+  <project name="page_table_multiarch" path="crates/page_table_multiarch" groups="memory,layer4"/>
 
-  <!-- Drivers -->
-  <project name="plic" path="plic" groups="driver"/>
-  <project name="ahci_driver" path="ahci_driver" groups="driver"/>
-  <project name="simple-sdmmc" path="simple-sdmmc" groups="driver"/>
+  <!-- ========================================== -->
+  <!-- Layer 5: Device Drivers                    -->
+  <!-- ========================================== -->
 
-  <!-- Network -->
-  <project name="smoltcp" path="smoltcp" groups="network"/>
+  <project name="plic"               path="drivers/plic"            groups="driver,layer5"/>
+  <project name="ahci_driver"        path="drivers/ahci_driver"     groups="driver,layer5"/>
+  <project name="simple-sdmmc"       path="drivers/simple-sdmmc"    groups="driver,layer5"/>
 
-  <!-- Filesystems -->
-  <project name="axfs-ng-vfs" path="axfs-ng-vfs" groups="fs"/>
-  <project name="lwext4_rust" path="lwext4_rust" groups="fs"/>
-  <project name="lwext4" path="lwext4" groups="fs"/>
-  <project name="rust-fatfs" path="rust-fatfs" groups="fs"/>
+  <!-- ========================================== -->
+  <!-- Layer 6: System Services                   -->
+  <!-- ========================================== -->
 
-  <!-- Dependencies -->
-  <project name="priority-queue" path="priority-queue" groups="deps"/>
-  <project name="vec-map" path="vec-map" groups="deps"/>
-  <project name="allocator" path="allocator" groups="deps"/>
+  <!-- Network stack -->
+  <project name="smoltcp"            path="services/network/smoltcp" groups="network,layer6"/>
 
-  <!-- Tools -->
-  <project name="kernel_elf_parser" path="kernel_elf_parser" groups="tools"/>
-  <project name="flatten_objects" path="flatten_objects" groups="tools"/>
-  <project name="rustfmt" path="rustfmt" groups="tools"/>
+  <!-- Filesystem support -->
+  <project name="axfs-ng-vfs"        path="services/fs/axfs-ng-vfs"  groups="fs,layer6"/>
+  <project name="lwext4_rust"        path="services/fs/lwext4_rust"  groups="fs,layer6"/>
+  <project name="lwext4"             path="services/fs/lwext4"       groups="fs,layer6"/>
+  <project name="rust-fatfs"         path="services/fs/rust-fatfs"   groups="fs,layer6"/>
 
-  <!-- Extra/Optional -->
-  <project name="axvisor" path="axvisor" groups="extra"/>
+  <!-- ========================================== -->
+  <!-- Layer 7: Third-party Libraries             -->
+  <!-- ========================================== -->
+
+  <project name="priority-queue"     path="third-party/priority-queue" groups="deps,layer7"/>
+  <project name="vec-map"            path="third-party/vec-map"        groups="deps,layer7"/>
+  <project name="allocator"          path="third-party/allocator"      groups="deps,layer7"/>
+
+  <!-- ========================================== -->
+  <!-- Tools & Utilities                          -->
+  <!-- ========================================== -->
+
+  <project name="kernel_elf_parser"  path="tools/kernel_elf_parser"  groups="tools"/>
+  <project name="flatten_objects"    path="tools/flatten_objects"    groups="tools"/>
+  <project name="rustfmt"            path="tools/rustfmt"            groups="tools"/>
+
+  <!-- ========================================== -->
+  <!-- Optional/Experimental                      -->
+  <!-- ========================================== -->
+
+  <project name="axvisor"            path="extra/axvisor"           groups="extra"/>
 </manifest>
