@@ -31,6 +31,7 @@
   <project name="axplat_crates"                  path="platforms/axplat_crates"             groups="platform,layer3"/>
   <project name="axplat-loongarch64-2k1000la"    path="platforms/loongarch64-2k1000la"      groups="platform,layer3"/>
   <project name="axplat-riscv64-visionfive2"     path="platforms/riscv64-visionfive2"       groups="platform,layer3"/>
+  <project name="axplat-opi5p"                   path="platforms/opi5p"                     groups="platform,layer3"/>
 
   <!-- ========================================== -->
   <!-- Layer 4: Kernel Subsystems                 -->
@@ -83,6 +84,8 @@
   <project name="kernel_elf_parser"  path="tools/kernel_elf_parser"  groups="tools"/>
   <project name="flatten_objects"    path="tools/flatten_objects"    groups="tools"/>
   <project name="rustfmt"            path="tools/rustfmt"            groups="tools"/>
+
+  <project name="scripts"            path="scripts"            groups="scripts"/>
 
   <!-- ========================================== -->
   <!-- Optional/Experimental                      -->
